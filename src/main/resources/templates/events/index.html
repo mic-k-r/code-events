@@ -9,12 +9,22 @@
 
     <table class="table table-striped">
         <thead>
-            <tr>Event Name</tr>
+            <tr>
+                <th scope="col">Event Name</th>
+                <th scope="col">Description</th>
+                <th th:replace="fragments :: addressColumn"></th>
+                <th th:replace="fragments :: images"></th>
+            </tr>
         </thead>
-        <td th:unless="${events} and ${events.size()}">No events yet</td>
-        <tr th:each="event : ${events}">
-            <td th:text="${event}"></td>
-        </tr>
+        <tbody>
+<!--            <td th:unless="${events} and ${events.size()}">No events yet</td>-->
+            <tr th:each="event : ${events}">
+                <td th:text="${event.getKey()}"></td>
+                <td th:text="${event.getValue()}"></td>
+                <td th:replace="fragments :: anAddress"></td>
+                <td th:replace="fragments :: anImage"></td>
+            </tr>
+        </tbody>
     </table>
 
 </body>
