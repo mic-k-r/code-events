@@ -9,12 +9,17 @@
 </head>
 <body>
 
-<nav th:fragment="navigation">
-    <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="/events">All Events</a></li>
-        <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
-    </ul>
-</nav>
+<div th:fragment="header">
+    <h1>Coding Events</h1>
+
+    <nav>
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/events">All Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
+            <li class="nav-item"><a class="nav-link" href="/events/delete">Delete Event</a></li>
+        </ul>
+    </nav>
+</div>
 
 </body>
 </html>
