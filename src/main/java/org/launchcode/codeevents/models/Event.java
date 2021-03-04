@@ -29,7 +29,9 @@ public class Event {
     @AssertTrue
     private boolean isRegistered = true;
 
-    public Event(String name, String description, String location, int numAttendees, boolean isRegistered, String contactEmail) {
+    private EventType type;
+
+    public Event(String name, String description, String location, int numAttendees, boolean isRegistered, String contactEmail, EventType type) {
         this();
         this.name = name;
         this.description = description;
@@ -37,6 +39,7 @@ public class Event {
         this.numAttendees = numAttendees;
         this.isRegistered = isRegistered;
         this.contactEmail = contactEmail;
+        this.type = type;
     }
 
     public Event() {
@@ -94,6 +97,14 @@ public class Event {
 
     public void setRegistered(boolean registered) {
         isRegistered = registered;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     @Override
