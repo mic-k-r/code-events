@@ -27,17 +27,17 @@ public class Event {
     private int numAttendees;
 
     @AssertTrue
-    private boolean isRegistered = true;
+    private boolean registrationRequired = true;
 
     private EventType type;
 
-    public Event(String name, String description, String location, int numAttendees, boolean isRegistered, String contactEmail, EventType type) {
+    public Event(String name, String description, String location, int numAttendees, boolean registrationRequired, String contactEmail, EventType type) {
         this();
         this.name = name;
         this.description = description;
         this.location = location;
         this.numAttendees = numAttendees;
-        this.isRegistered = isRegistered;
+        this.registrationRequired = registrationRequired;
         this.contactEmail = contactEmail;
         this.type = type;
     }
@@ -91,12 +91,12 @@ public class Event {
         this.numAttendees = numAttendees;
     }
 
-    public boolean isRegistered() {
-        return isRegistered;
+    public boolean isRegistrationRequired() {
+        return registrationRequired;
     }
 
-    public void setRegistered(boolean registered) {
-        isRegistered = registered;
+    public void setRegistrationRequired(boolean registrationRequired) {
+        this.registrationRequired = registrationRequired;
     }
 
     public EventType getType() {
