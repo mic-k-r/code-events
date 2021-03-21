@@ -18,42 +18,43 @@
         </div>
         <div class="form-group">
             <label>Description
-                <input th:field="${event.description}" class="form-control">
+                <input th:field="${event.eventDetails.description}" class="form-control">
             </label>
-            <p class="error" th:errors="${event.description}"></p>
+            <p class="error" th:errors="${event.eventDetails.description}"></p>
         </div>
         <div class="form-group">
             <label>Location
-                <input th:field="${event.location}" class="form-control">
+                <input th:field="${event.eventDetails.location}" class="form-control">
             </label>
-            <p class="error" th:errors="${event.contactEmail}"></p>
+            <p class="error" th:errors="${event.eventDetails.location}"></p>
         </div>
         <div class="form-group">
             <label>Number of Attendees
-                <input th:field="${event.numAttendees}" class="form-control">
+                <input th:field="${event.eventDetails.numAttendees}" class="form-control">
             </label>
-            <p class="error" th:errors="${event.numAttendees}"></p>
+            <p class="error" th:errors="${event.eventDetails.numAttendees}"></p>
         </div>
         <div class="form-group">
             <label>Registration Required
-                <input th:field="${event.registrationRequired}" type="checkbox" class="form-control">
+                <input th:field="${event.eventDetails.registrationRequired}" type="checkbox" class="form-control">
             </label>
-            <p class="error" th:errors="${event.registrationRequired}"></p>
+            <p class="error" th:errors="${event.eventDetails.registrationRequired}"></p>
         </div>
         <div class="form-group">
             <label>Contact Email
-                <input th:field="${event.contactEmail}" class="form-control">
+                <input th:field="${event.eventDetails.contactEmail}" class="form-control">
             </label>
-            <p class="error" th:errors="${event.contactEmail}"></p>
+            <p class="error" th:errors="${event.eventDetails.contactEmail}"></p>
         </div>
         <div class="form-group">
-            <label>Event Type
-                <select th:field="${event.type}">
-                    <option th:each="type : ${types}"
-                            th:value="${type}"
-                            th:text="${type.displayName}"
+            <label>Category
+                <select th:field="${event.eventCategory}">
+                    <option th:each="eventCategory : ${categories}"
+                            th:value="${eventCategory.id}"
+                            th:text="${eventCategory.name}"
                     ></option>
                 </select>
+                <p class="error" th:errors="${event.eventCategory}"></p>
             </label>
         </div>
         <div class="form-group">

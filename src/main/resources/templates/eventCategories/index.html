@@ -8,7 +8,7 @@
     <table class="table table-striped">
         <th>Category Name</th>
         <tr th:each="eventCategory : ${categories}">
-            <td th:text="${eventCategory.name}"></td>
+            <td><a th:href="'/events?categoryId=' + ${eventCategory.id}" th:text="${eventCategory.name}"></a></td>
         </tr>
     </table>
 
